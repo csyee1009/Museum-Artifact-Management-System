@@ -1,0 +1,17 @@
+# Microsoft Access temporary lock files
+*.laccdb
+*.ldb
+
+# Microsoft Office temporary files
+~$*
+
+# Backup files
+*.bak
+*.tmp
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
