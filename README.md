@@ -1,137 +1,300 @@
-# Museum Artifact Management System
+# 🏛️ Museum Artifact Management System
 
-A relational database application developed using Microsoft Access to support the management of museum artifacts, collections, provenance, storage, exhibitions, maintenance records, and staff.
+> A Microsoft Access relational database application for managing museum artifacts, provenance, collections, exhibitions, storage, maintenance records, and staff assignments.
 
-This project was developed as a group project for **UCCD1203 – Database Development and Applications** at Universiti Tunku Abdul Rahman (UTAR).
+**Course:** UCCD1203 – Database Development and Applications  
+**Project Type:** Academic Group Project  
+**Technology:** Microsoft Access · SQL · Relational Database Design · ERD
 
-## Overview
+---
 
-The Museum Artifact Management System provides a centralized database for museum staff to store, retrieve, update, and manage artifact-related information.
+## 📌 Project Overview
 
-The system supports artifact registration, provenance tracking, collection categorization, storage management, exhibition planning, maintenance history, artifact condition monitoring, and staff assignment.
+The **Museum Artifact Management System** is a centralized database solution designed to support museum operations by organizing and managing artifact-related information.
 
-## Database Design
+The system allows museum staff to manage:
 
-The database consists of 10 main entities:
+- Artifact details and condition
+- Artifact provenance and acquisition history
+- Collections and curation records
+- Exhibitions and featured artifacts
+- Storage locations
+- Maintenance history
+- Staff responsibilities and supervision
 
-- Artifact
-- Provenance
-- Collection
-- Curation
-- Maintenance
-- Staff
-- Exhibition
-- Feature
-- Storage
-- Repository
+The database was designed with structured relationships, primary and foreign keys, associative entities, and business rules to maintain data consistency and integrity.
 
-Primary and foreign key relationships are used to maintain referential integrity, while associative entities resolve relationships between artifacts, collections, exhibitions, storage locations, and maintenance activities.
+---
 
-## Key Features
+## 🗂️ Database Structure
 
-### Artifact Management
+The system contains **10 relational entities**:
 
-Stores artifact information including name, description, type, acquisition date, value, and current condition.
+| Entity | Purpose |
+|---|---|
+| `ARTIFACT` | Stores artifact details, value, acquisition date and current condition |
+| `PROVENANCE` | Records previous ownership and acquisition information |
+| `COLLECTION` | Stores museum collection themes |
+| `CURATION` | Connects artifacts with collections |
+| `EXHIBITION` | Stores exhibition details and schedules |
+| `FEATURE` | Links artifacts to exhibitions |
+| `STORAGE` | Stores artifact storage locations and climate-control information |
+| `REPOSITORY` | Connects artifacts with storage locations |
+| `MAINTENANCE` | Records maintenance activities and history |
+| `STAFF` | Stores staff information, roles and supervisory relationships |
 
-### Provenance Tracking
+---
 
-Maintains information about previous ownership, country of origin, and acquisition method.
+## 🔗 Entity Relationship Design
 
-### Collection Management
+The database uses:
 
-Organizes artifacts into museum collections and records their curation information.
+- Primary Keys
+- Foreign Keys
+- Composite Keys
+- One-to-One Relationships
+- One-to-Many Relationships
+- Many-to-Many Relationships resolved using associative entities
+- Self-referencing staff supervision relationship
 
-### Exhibition Management
+### ERD
 
-Tracks exhibitions, participating artifacts, exhibition schedules, and responsible staff.
+> Add your ERD image here.
 
-### Storage Management
+```markdown
+![Entity Relationship Diagram](docs/erd.png)
+```
 
-Tracks artifact storage locations, repository placement, and climate-control information.
+---
 
-### Maintenance Tracking
+## ✨ Key Features
 
-Maintains artifact maintenance history including maintenance type, date, responsible staff, and artifact condition.
+### 🏺 Artifact Management
 
-### Staff Management
+Register and maintain artifact information including:
 
-Stores staff information, roles, responsibilities, and supervisory relationships.
+- Artifact name
+- Description
+- Type
+- Acquisition date
+- Value
+- Current condition
 
-## Queries
+### 📜 Provenance Tracking
 
-The system includes several SQL queries for retrieving and analysing museum information.
+Stores historical information such as:
 
-**Renaissance Art Collection**
+- Previous owner
+- Previous country
+- Acquisition method
 
-Retrieves artifacts associated with the Renaissance Art collection for collection review and exhibition planning.
+### 🖼️ Collection & Exhibition Management
 
-**Artifact Maintenance Detail**
+Supports:
 
-Combines artifact, maintenance, and staff information to provide a complete view of maintenance activities and responsibilities.
+- Artifact categorization into collections
+- Exhibition scheduling
+- Linking artifacts to multiple exhibitions
+- Assignment of responsible staff
 
-**Artifact Exhibition and Storing**
+### 📦 Storage Management
 
-Provides an overview of artifact exhibition status and storage information.
+Tracks:
 
-## Forms
+- Storage locations
+- Artifact placement
+- Storage descriptions
+- Climate-control information
 
-The application provides interactive Microsoft Access forms for easier database operation.
+### 🛠️ Maintenance Tracking
 
-**Artifact Registration Form**
+Records:
 
-Allows users to browse existing artifact records and register new artifacts.
+- Maintenance date
+- Maintenance type
+- Artifact involved
+- Responsible staff
+- Artifact condition history
 
-**Update Artifact Condition Form**
+### 👥 Staff Management
 
-Allows artifact condition information to be updated while displaying the associated maintenance history.
+Stores:
 
-**Artifact Exhibition Form**
+- Staff information
+- Staff roles
+- Responsibilities
+- Supervisor relationships
 
-Provides an interface for viewing and managing exhibitions, artifacts, and responsible staff.
+---
 
-## Reports
+## 🔍 SQL Queries
 
-The system contains formatted reports for operational and management use.
+The system includes three main queries.
 
-**Collection Report**
+### 1. Renaissance Art Collection
 
-Groups museum artifacts according to their respective collections.
+Retrieves artifacts associated with the **Renaissance Art** collection.
 
-**Exhibition Report**
+### 2. Artifact Maintenance Detail
 
-Summarizes exhibition schedules and associated artifacts.
+Combines artifact, maintenance and staff information to provide a detailed view of maintenance activities.
 
-**Maintenance Report**
+### 3. Artifact Exhibition and Storing
 
-Summarizes artifact maintenance activities, maintenance dates, conditions, and maintenance types.
+Retrieves exhibition and storage information associated with museum artifacts.
 
-## Navigation
+---
 
-A Microsoft Access switchboard provides a centralized navigation interface for accessing forms, queries, tables, reports, and application controls.
+## 📝 Forms
 
-## Technologies
+Three Microsoft Access forms provide a user-friendly interface for managing database records.
+
+### Artifact Registration Form
+
+Used to:
+
+- Browse artifact records
+- Register new artifacts
+- Update artifact information
+
+### Artifact Condition Update & Maintenance History
+
+Used to:
+
+- Update an artifact's current condition
+- Review related maintenance records
+
+### Exhibition Details & Management Form
+
+Used to:
+
+- Manage exhibitions
+- View featured artifacts
+- View responsible staff
+
+---
+
+## 📊 Reports
+
+The database provides three formatted management reports.
+
+| Report | Purpose |
+|---|---|
+| **Collection Report** | Displays artifacts grouped by collection |
+| **Exhibition Report** | Displays exhibition schedules and associated artifacts |
+| **Maintenance Report** | Summarizes maintenance records and artifact conditions |
+
+---
+
+## 🧭 Navigation
+
+A Microsoft Access **Switchboard** provides centralized navigation to:
+
+- Tables
+- Queries
+- Forms
+- Reports
+- Application Exit
+
+The switchboard is configured to open automatically when the database starts.
+
+---
+
+## 🛠️ Technologies & Skills
 
 - Microsoft Access
 - SQL
 - Relational Database Design
 - Entity Relationship Diagram (ERD)
-- Database Forms and Reports
-- Access Switchboard and Macros
+- Primary & Foreign Key Design
+- Database Relationships
+- Data Integrity
+- Forms
+- Reports
+- Queries
+- Microsoft Access Switchboard
 
-## Running the Project
+---
+
+## 📁 Repository Structure
+
+```text
+museum-artifact-management-system/
+│
+├── README.md
+│
+├── database/
+│   └── Museum_Artifact_Management.accdb
+│
+└── docs/
+    ├── Report.pdf
+    ├── Report.docx
+    ├── erd.png
+    │
+    └── screenshots/
+        ├── main-switchboard.png
+        ├── artifact-registration-form.png
+        ├── artifact-condition-form.png
+        ├── artifact-exhibition-form.png
+        ├── collection-report.png
+        ├── exhibition-report.png
+        └── maintenance-report.png
+```
+
+---
+
+## 🚀 How to Run
 
 1. Clone or download this repository.
-2. Open `database/Museum_Artifact_Management.accdb` using Microsoft Access.
-3. The main switchboard provides access to the application's forms, queries, tables, and reports.
+2. Open:
 
-Microsoft Access for Windows is recommended to preserve the application's forms, reports, macros, and switchboard functionality.
+```text
+database/Museum_Artifact_Management.accdb
+```
 
-## Academic Context
+3. Launch the file using **Microsoft Access**.
+4. The main switchboard will open automatically.
+5. Navigate between tables, queries, forms and reports.
 
-This project was developed as a four-member academic group project for **UCCD1203 – Database Development and Applications**.
+> Microsoft Access on Windows is recommended to preserve the forms, reports, macros and switchboard functionality.
 
-The project demonstrates relational database modelling, entity-relationship design, SQL querying, data integrity, database application development, and user-oriented database interfaces.
+---
 
-## Known Limitations
+## 📚 Academic Context
 
-The current Microsoft Access implementation is intended for small-scale use and has limited scalability for large datasets or concurrent users. Future improvements could include role-based access control, automated backup and recovery, improved user-interface design, database migration to a server-based DBMS, and analytics or visualization capabilities.
+This project was developed as part of:
+
+**UCCD1203 – Database Development and Applications**  
+**Bachelor of Computer Science (Honours)**  
+**Universiti Tunku Abdul Rahman (UTAR)**
+
+The project demonstrates practical understanding of relational database modelling, SQL querying, database application development, data integrity and user-oriented database interfaces.
+
+---
+
+## ⚠️ Limitations
+
+The current implementation is designed for small-scale Microsoft Access usage.
+
+Possible future improvements include:
+
+- Role-based access control
+- User authentication
+- Automated backup and recovery
+- Improved UI/UX
+- Multi-user concurrency
+- Migration to MySQL / PostgreSQL
+- Web-based frontend
+- Data analytics dashboard
+
+---
+
+## 👨‍💻 Project Type
+
+Academic group project developed by a team of four students.
+
+---
+
+## 📄 Documentation
+
+Full project documentation is available in the [`docs`](docs/) directory.
